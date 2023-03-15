@@ -1,0 +1,15 @@
+import sys
+
+def hanoi(n: int, source = 1, temp = 2, target = 3) -> int:
+    if n == 1 :
+        print("Move " + str(source) + " to " + str(target))
+    else :
+        hanoi(n-1, source, target, temp)
+        print("Move " + str(source) + " to " + str(target))
+        hanoi(n-1, temp, source, target)
+
+
+if __name__ == "__main__":
+	if len(sys.argv) == 2:
+		n = int(sys.argv[1])
+		hanoi(n)
